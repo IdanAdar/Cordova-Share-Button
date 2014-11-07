@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>Prototype</title>
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    		<link rel="shortcut icon" href="images/favicon.png">
+    		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    	</head>
+    	<body style="display: none;">
+    		<h2>POC: Share Question</h2>
+    		<p>
+    			<b>Share a question's link via 3rd party apps using a Cordova plug-in.</b>
+    		</p>
+    		<br>
+    		<h3>Question view</h3>
+    		<hr>
+    		<br>
+    		<h4><a href="http://stackoverflow.com/questions/20511056/what-is-the-significance-of-the-argument-to-wl-client-createchallengehandler" class='question_link'>What is the significance of the argument to WL.Client.createChallengeHandler?</a></h4>
+    		<br>
+    		<button onclick="openExternalApp()">Share Question</button>
+    		<br><br>
+    		<p>
+    			I'm using Worklight 6.0 and Form based authentication.
+
+I thought that the argument for WL.Client.createChallengeHandler() was the realm that the challenge handler would address, but testing seems to indicate that there is no way to create a realm specific challenge handler.
+
+I have an adapter with 2 procedures. Each procedure has a separate security test. Each test corresponds to a different realm: r1 and r2.
+
+In my app, I have 2 challenge handlers, one for r1, and one for r2. However, the challenge handler for r1 ends up handling the challenges for both adapter procedures. I find that I can use any string in WL.Client.createChallengeHandler() … non-existent realms, empty string, or even no argument, and it might change which of the 2 challenge handlers gets used, but whichever one gets used is used for all challenges.
+
+What is the argument to WL.Client.createChallengeHandler() used for? Is there any way to tie a challenge handler to a realm?
+    		</p>
+    		
+    		<script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+    	</body>
+</html>

@@ -1,0 +1,8 @@
+Instructions for Android:
+==========================
+
+1. Build and deploy
+- this will copy the plug-in files (config.xml, OpenExternalAppPlugin.java) from the nativeResources folder
+  to the appropriate locations in the generated native folder
+
+2. Run in Android device or emulator
